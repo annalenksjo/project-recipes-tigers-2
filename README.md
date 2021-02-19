@@ -7,3 +7,6 @@ During this week we will be having a remote collaborative session – YAY! Durin
 During the session, your team will be challenged to build a website that lists recipes  – YUM 😋.
 
 All data should be fetched from the [Edamam API](https://developer.edamam.com/edamam-docs-recipe-api). Your page will be built based on the following design:
+
+## Wolt
+https://www.notion.so/technigo/Wolt-90782b4e33884b68b04d9fdd9a4f0d9d
