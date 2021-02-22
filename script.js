@@ -15,11 +15,14 @@ fetch(API_URL)
 .then((json) => {
   json.hits.forEach((data) => {
     container.innerHTML += `
+    <div class="recipe-cards">
+    <img src="${data.recipe.image}" />
       <p>${data.recipe.label}</p>
       <p>${data.recipe.source}</p>
       <p><a href="${data.recipe.url}">Link to recipe</a></p>
-      <img src="${data.recipe.image}" />
-      <p>Cooking time: ${data.recipe.totalTime} minutes</p>`;
+      
+      <p>Cooking time: ${data.recipe.totalTime} minutes</p>
+      </div>`;
   });
 })
 .catch((error) => {
