@@ -10,13 +10,21 @@
   <header class="header">
     <!-- Put in logo, search, nav bar -->
     <label for="site-search"></label>
-    <input type="search" id="site-search" name="q"
+    <input type="search" id="siteSearch" name="q"
        aria-label="Search for recipes" placeholder="Sök">
   
     <nav>
 
     </nav>
   </header>
+  <section class="filter-bar" id="filterBar">
+    <label for="recipes">Cooking time: </label>
+    <select name="cooking-time" id="cookingTime">
+      <option value="30">30 min</option>
+      <option value="45">45 min</option>
+      <option value="60">60 min</option>
+    </select>
+  </section>
   <h1 class="main-heading">Middag nära dig i Stockholm</h1>
   <main class="main">
     <h2 class="sub-heading">Restauranger öppna & online</h2>

@@ -1,10 +1,36 @@
 //DOM SELECTORS
 const container = document.getElementById("recipeContainer")
-const searchField = document.getElementById("site-search")
+const searchField = document.getElementById("siteSearch")
+const cookingTime = document.getElementById("cookingTime")
 
 //GLOBAL VARIABLES
+let recipesResult 
+let filterTime
+
+//GENERATE RECIPECARD
+const generateRecipeCard = () => {
+  let recipesCards = [...recipesResult] 
 
 
+
+  container.innerHTML = ''
+  recipesResult.forEach((data) => {
+    container.innerHTML += `
+      <div class="recipe-cards">
+        <p>${data.recipe.label}</p>
+        <p>${data.recipe.source}</p>
+        <p><a href="${data.recipe.url}">Link to recipe</a></p>
+        <img src="${data.recipe.image}" />
+        <p>Cooking time: ${data.recipe.totalTime} minutes</p>
+      </div>`
+  })
+}
+
+//SELECT OPTION COOKING TIME
+const selectOption = () => {
+  filterTime = parseInt(cookingTime.value)
+  generateRecipeCard()
+}
 
 //FUNCTION CHECK KEY
 const checkKeyFunction = (event) => {
@@ -12,7 +38,7 @@ const checkKeyFunction = (event) => {
     return
   }
 
-  let searchFieldInput = searchField.value //behövde lägga till .value här + ändra om if statementet till negativt
+  let searchFieldInput = searchField.value 
   fetchFunction(searchFieldInput)
 }
 
@@ -23,18 +49,11 @@ const fetchFunction = (searchFieldInput) => {
   fetch(API_URL)
     .then((response) => response.json())
     .then((json) => {
-      json.hits.forEach((data) => {
-        container.innerHTML += `
-          <div class="recipe-cards">
-            <p>${data.recipe.label}</p>
-            <p>${data.recipe.source}</p>
-            <p><a href="${data.recipe.url}">Link to recipe</a></p>
-            <img src="${data.recipe.image}" />
-            <p>Cooking time: ${data.recipe.totalTime} minutes</p>
-          </div>`
-      })
+      recipesResult = json.hits
+      generateRecipeCard()
     })
     .catch((error) => {
+      container.innerHTML = 'Sorry, no matches, try again'
       console.error("Error: ", error)
     })
 }
