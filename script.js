@@ -25,7 +25,7 @@ const fetchFunction = (searchFieldInput) => {
     .then((json) => {
       json.hits.forEach((data) => {
         container.innerHTML += `
-          <div class="recipe-card">
+          <div class="recipe-cards">
             <p>${data.recipe.label}</p>
             <p>${data.recipe.source}</p>
             <p><a href="${data.recipe.url}">Link to recipe</a></p>
