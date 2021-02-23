@@ -17,11 +17,13 @@ fetch(API_URL)
     container.innerHTML += `
     <div class="recipe-cards">
     <img src="${data.recipe.image}" />
-      <p>${data.recipe.label}</p>
+      <p class="label">${data.recipe.label}</p>
       <p>${data.recipe.source}</p>
       <p><a href="${data.recipe.url}">Link to recipe</a></p>
       <p>Cooking time: ${data.recipe.totalTime} minutes</p>
-      </div>`;
+      <div class="recipe-card-bottom-info">Other info</div>
+      </div>
+      `;
   });
 })
 .catch((error) => {
