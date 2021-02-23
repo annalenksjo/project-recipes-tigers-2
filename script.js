@@ -4,17 +4,19 @@ const searchField = document.getElementById("siteSearch")
 const cookingTime = document.getElementById("cookingTime")
 
 //GLOBAL VARIABLES
-let recipesResult 
+let recipesResult = []
 let filterTime
 
 //GENERATE RECIPECARD
 const generateRecipeCard = () => {
   let recipesCards = [...recipesResult] 
 
-
+  if (filterTime) {
+    recipesCards = recipesCards.filter((recipe) => recipe.recipe.totalTime <= filterTime)
+  }
 
   container.innerHTML = ''
-  recipesResult.forEach((data) => {
+  recipesCards.forEach((data) => {
     container.innerHTML += `
       <div class="recipe-cards">
        <img src="${data.recipe.image}" />
@@ -61,3 +63,4 @@ const fetchFunction = (searchFieldInput) => {
 
 //EVENTLISTENERS
 searchField.addEventListener('keydown', checkKeyFunction)
+cookingTime.addEventListener('change', selectOption)
