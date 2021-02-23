@@ -5,15 +5,25 @@ body {
 }
 
 .header {
-  width: 90vw;
+  width: 95vw;
   height: 100px; 
   padding: 10px;
   display: flex;
+  justify-content: space-between;
 }
 
 nav {
 display: flex;
+align-items: center;
 justify-content: center;
+width: 60%;
+}
+
+input {
+  height: 40px;
+  border-radius: 8px;
+  border: solid 1px lightslategray;
+  margin: 0 0 10px 0;
 }
 
 ul {
@@ -22,6 +32,7 @@ ul {
   flex-direction: column;
   width: 40%;
   justify-content: space-evenly;
+  padding: 10px;
 }
 
 li {
@@ -39,8 +50,32 @@ a:link {
   font-size: 30px;
 }
 
+.filter-bar {
+  width: 300px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 15px;
+}
+
+.label-time-filter {
+  font-size: 20px;
+}
+
+.select-field {
+  height: 40px;
+  width: 100px;
+  border: 1px solid lightslategray;
+  border-radius: 8%;
+  font-weight: bold;
+}
+
+.option-value {
+  font-size: 20px;
+}
+
 hr {
-  width: 100vw;
+  
   height: 2px;
   border-style: none;
   background-color: lightgray;
@@ -48,13 +83,18 @@ hr {
 
 .main-heading {
   font-weight: bold;
-  font-size: 40px;
-  padding: 10px 0 30px 10px;
-  margin-left: 10px;
-  margin-right: 10px;
+  font-size: 20px;
   border: lightgray 3px;
   border-style: none none solid none;
   width: 90vw;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  padding: 10px;
+  font-size: 40px;
 }
 
 .main {
@@ -64,9 +104,17 @@ flex-direction: column;
 justify-content: center;
 }
 
+.search-recipies {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+    width: 70%;
+    padding-left: 10%;
+}
+
 .sub-heading {
-  /*padding-left: 20px;*/ 
-  width: 85vw;
+  padding-left: 15px;
   align-items: center;
 }
 
@@ -113,9 +161,11 @@ p {
 .footer {
   background-color: whitesmoke;
   padding: 10px;
-  margin: 30px 0px 0px 0px;
+  margin: auto;
   text-align: center;
   width: 90vw;
+  position: fixed;
+  bottom: 0;
 }
 
 /* MEDIA QUERIES*/
@@ -129,13 +179,34 @@ p {
   }
 
   .main-heading {
-    font-size: 50px;
-    padding: 10px 0 30px 0;
-    margin: 60px 10% 30px 10%;
+    font-size: 40px;
+    margin: auto;
+    width: 80%;
   }
 
+  h1 {
+    padding: 10px;
+    font-size: 50px;
+  }
+
+  .filter-bar {
+    display: flex; 
+    font-size: 30px;
+  }
   .sub-heading {
-    margin-left: 10%;
+    font-size: 40px;
+  }
+
+  .label-time-filter {
+    font-size: 3d0px;
+    padding-right: 10px;
+  }
+
+  .search-recipies {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
   }
 
   .recipe-container {
@@ -153,10 +224,13 @@ p {
     justify-content: space-between;
   }
   
+
   nav {
-    flex-direction: row;
-    justify-content: space-between;
-  }
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 80%;
+    }
 
   ul {
     flex-direction: row;
@@ -181,7 +255,6 @@ p {
 }
 
 .sub-heading {
-  margin-left: 15%;
 }
   
 .recipe-container {
