@@ -20,7 +20,6 @@ fetch(API_URL)
       <p>${data.recipe.label}</p>
       <p>${data.recipe.source}</p>
       <p><a href="${data.recipe.url}">Link to recipe</a></p>
-      
       <p>Cooking time: ${data.recipe.totalTime} minutes</p>
       </div>`;
   });
