@@ -1,10 +1,38 @@
 //DOM SELECTORS
 const container = document.getElementById("recipeContainer")
-const searchField = document.getElementById("site-search")
+const searchField = document.getElementById("siteSearch")
+const cookingTime = document.getElementById("cookingTime")
 
 //GLOBAL VARIABLES
+let recipesResult = []
+let filterTime
 
+//GENERATE RECIPECARD
+const generateRecipeCard = () => {
+  let recipesCards = [...recipesResult] 
 
+  if (filterTime) {
+    recipesCards = recipesCards.filter((recipe) => recipe.recipe.totalTime <= filterTime)
+  }
+
+  container.innerHTML = ''
+  recipesCards.forEach((data) => {
+    container.innerHTML += `
+      <div class="recipe-cards">
+       <img src="${data.recipe.image}" />
+        <p class="label">${data.recipe.label}</p>
+        <p>${data.recipe.source}</p>
+        <p><a href="${data.recipe.url}">Link to recipe</a></p>
+        <p>Cooking time: ${data.recipe.totalTime} minutes</p>
+      </div>`
+  })
+}
+
+//SELECT OPTION COOKING TIME
+const selectOption = () => {
+  filterTime = parseInt(cookingTime.value)
+  generateRecipeCard()
+}
 
 //FUNCTION CHECK KEY
 const checkKeyFunction = (event) => {
@@ -12,7 +40,7 @@ const checkKeyFunction = (event) => {
     return
   }
 
-  let searchFieldInput = searchField.value //behövde lägga till .value här + ändra om if statementet till negativt
+  let searchFieldInput = searchField.value 
   fetchFunction(searchFieldInput)
 }
 
@@ -23,18 +51,11 @@ const fetchFunction = (searchFieldInput) => {
   fetch(API_URL)
     .then((response) => response.json())
     .then((json) => {
-      json.hits.forEach((data) => {
-        container.innerHTML += `
-          <div class="recipe-cards">
-          <img src="${data.recipe.image}" />
-            <p class="label">${data.recipe.label}</p>
-            <p>${data.recipe.source}</p>
-            <p><a href="${data.recipe.url}">Link to recipe</a></p>
-            <p>Cooking time: ${data.recipe.totalTime} minutes</p>
-          </div>`
-      })
+      recipesResult = json.hits
+      generateRecipeCard()
     })
     .catch((error) => {
+      container.innerHTML = 'Sorry, no matches, try again'
       console.error("Error: ", error)
     })
 }
@@ -42,3 +63,4 @@ const fetchFunction = (searchFieldInput) => {
 
 //EVENTLISTENERS
 searchField.addEventListener('keydown', checkKeyFunction)
+cookingTime.addEventListener('change', selectOption)

@@ -1,62 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./style.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
- 
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">   
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-  <title>Version 1</title>
-</head>
-<body>
-  <header class="header">
-    <h3 class="logo">Wolt Foods</h3>
-    <!-- Put in logo, search, nav bar -->
-    <nav>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./style.css" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
 
-      <ul>
-        <li><a href="#Login">Log in</a></li>
-        <li><a href="#Register">Register</a></li>
-        <li><a href="#Languages">Languages</a></li>
-      </ul>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+			rel="stylesheet"
+		/>
+		<title>Wolt Foods</title>
+	</head>
+	<body>
+		<header class="header">
+			<h3 class="logo">Wolt Foods</h3>
+			<nav>
+				<ul>
+					<li><a href="#Login">Log in</a></li>
+					<li><a href="#Register">Register</a></li>
+					<li><a href="#Languages">Languages</a></li>
+				</ul>
+			</nav>
+		</header>
+		<hr />
+		<div class="main-heading">
+			<h1>What's for dinner tonight?</h1>
+		</div>
 
-    <label for="site-search"></label>
-    
-  </header>
-  <hr>
-  <div class="main-heading">
-    <h1>What's for dinner tonight?</h1>
-  </div>
+		<main class="main">
+			<section class="search-recipies">
+				<h2 class="sub-heading">Find your flavor!</h2>
+				<label for="site-search"></label>
+				<input
+					type="search"
+					id="siteSearch"
+					name="q"
+					aria-label="Search for recipes"
+					placeholder="Search"/>
 
-  <main class="main">
-    
-    <section class="search-recipies">
-    <h2 class="sub-heading">Find your flavor!</h2>
+				<section class="filter-bar" id="filterBar">
+					<label class="label-time-filter" for="recipes">Cooking time: </label>
+					<select class="select-field" name="cooking-time" id="cookingTime">
+						<option class="option-value" value="30">Fast</option>
+						<option class="option-value" value="60">Slow</option>
+					</select>
+				</section>
+			</section>
 
-    <input type="search" id="site-search" name="q"
-       aria-label="Search for recipes" placeholder="Search">
+			<section class="recipe-container" id="recipeContainer"></section>
+		</main>
 
-    <section class="filter-bar" id="filterBar">
-      <label class="label-time-filter" for="recipes">Cooking time: </label>
-      <select class="select-field" name="cooking-time" id="cookingTime">
-        <option class="option-value" value="30">30 min</option>
-        <option class="option-value" value="45">45 min</option>
-        <option class="option-value" value="60">60 min</option>
-      </select>
-    </section>
-  </section>
-    <section class="recipe-container" id="recipeContainer">
-      <!--- Insert Div with recipe cards--->
-    </section>
-  
-  </main>
-  
-  <footer class="footer"> A Technigo Bootcamp project by Isabella, Anna, Yennie & Elle</footer> 
+		<footer class="footer">
+			A Technigo Bootcamp project by Isabella, Anna, Yennie & Elle
+		</footer>
 
-
-  <script src="./script.js"></script>
-</body>
+		<script src="./script.js"></script>
+	</body>
 </html>
