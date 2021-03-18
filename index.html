@@ -28,36 +28,37 @@
 				</ul>
 			</nav>
 		</header>
-		<hr />
+
 		<div class="main-heading">
-			<h1>What's for dinner tonight?</h1>
+			<div class="main-heading-box">
+				<h1>What's for dinner?</h1>
+			</div>
 		</div>
 
 		<main class="main">
 			<section class="search-recipies">
-				<h2 class="sub-heading">Find your flavor!</h2>
-				<label for="site-search"></label>
-				<input
-					type="search"
-					id="siteSearch"
-					name="q"
+				
+				<input type="search" id="siteSearch" class="search-field" name="q"
 					aria-label="Search for recipes"
-					placeholder="Search"/>
+					placeholder="Type your search"/>
 
 				<section class="filter-bar" id="filterBar">
-					<label class="label-time-filter" for="recipes">Cooking time: </label>
 					<select class="select-field" name="cooking-time" id="cookingTime">
+						<option value ="defaultOption" disabled selected hidden>Cooking time</option>
 						<option class="option-value" value="30">Fast</option>
 						<option class="option-value" value="60">Slow</option>
 					</select>
 				</section>
+
 			</section>
 
-			<section class="recipe-container" id="recipeContainer"></section>
+			<section class="recipe-container" id="recipeContainer">
+			</section>
+		
 		</main>
 
 		<footer class="footer">
-			A Technigo Bootcamp project by Isabella, Anna, Yennie & Elle
+			A Technigo Bootcamp project by Isabella Markskog, Anna Lenksjö, Yennie Leek & Elle Frankenberg
 		</footer>
 
 		<script src="./script.js"></script>

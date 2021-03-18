@@ -4,6 +4,7 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+/********************* HEADER, NAVBAR *********************/
 .header {
   width: 95vw;
   height: 100px; 
@@ -13,34 +14,17 @@ body {
 }
 
 nav {
-display: flex;
-align-items: center;
-justify-content: center;
-width: 60%;
-}
-
-input {
-  height: 40px;
-  border-radius: 8px;
-  border: solid 1px lightslategray;
-  margin: 0 0 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
 }
 
 ul {
   list-style: none;
-  display: flex;
-  flex-direction: column;
-  width: 40%;
-  justify-content: space-evenly;
-  padding: 10px;
-}
-
-li {
-  width: 100px;
 }
 
 a:link {
-  text-decoration: none;
   word-wrap: none;
   color: black;
 }
@@ -50,138 +34,161 @@ a:link {
   font-size: 30px;
 }
 
-.filter-bar {
-  width: 300px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  font-size: 15px;
-}
+/***************** MAIN SECTION ******************/
 
-.label-time-filter {
-  font-size: 20px;
-}
-
-.select-field {
-  height: 40px;
-  width: 100px;
-  border: 1px solid lightslategray;
-  border-radius: 8%;
-  font-weight: bold;
-}
-
-.option-value {
-  font-size: 20px;
-}
-
-hr {
-  
-  height: 2px;
-  border-style: none;
-  background-color: lightgray;
-}
-
-.main-heading {
-  font-weight: bold;
-  font-size: 20px;
-  border: lightgray 3px;
-  border-style: none none solid none;
-  width: 90vw;
-  margin: auto;
-  display: flex;
+.main {
+  margin: 0;
+  width: 100vw;
+  flex-direction: column;
   justify-content: center;
 }
 
-h1 {
-  padding: 10px;
-  font-size: 40px;
-}
+.main-heading {
+  text-align: center;
+  font-size: 20px;
+  height: 10vh;
+  background-image: url(header-photo-light.jpg);
+  background-size: cover;
+  width: 100vw;
+  }
 
-.main {
-margin: 0;
-width: 100vw;
-flex-direction: column;
-justify-content: center;
-}
+  .main-heading-box {
+    position: relative;
+    top: 40%;
+  }
+
+/*************** FILTERING SECTION ****************/
 
 .search-recipies {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-content: center;
-    width: 70%;
-    padding-left: 10%;
-}
-
-.sub-heading {
-  padding-left: 15px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  margin: 20px 0 20px 0;
 }
 
+.search-field {
+  height: 50px;
+  border-radius: 8px;
+  border: solid 1px lightslategray;
+  width: 60%;
+  font-size: 12px;
+  margin: 0 0 6px 0;
+}
+
+.filter-bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 40%;
+}
+
+.select-field {
+  height: 50px;
+  width: 100%;
+  border: 1px solid lightslategray;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+/******************** RECIPES SECTION **********************/
 .recipe-container {
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-content: center;
-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 100vw;
 }
-
 
 .recipe-cards {
   display: flex;
   flex-direction: column; 
-  text-align: left;
-  
-  padding: 10px;
-  background-color: white;
-  width: 100%;
+  text-align: left;  
+  padding: 30px;
   margin: 10px;
+  background-color: white;
+  width: 80%;
   border: 3px solid lightgray;
   border-radius: 2%;
 }
 
 .recipe-img {
-width: 30%;
+  width: 30%;
+  border-radius: 3%;
+  filter: saturate(1.8) brightness(0.8) contrast(1.5)
 }
 
-.recipe-card-bottom-info {
-  border: 2px lightgray;
-  border-style: dashed none none none;
-  width: 100%;
-  margin: 4px 0 0 0;
-  padding: 2px 0 0 0;
+.recipe-card-label {
+  font-size: 30px;
+}
 
+.recipe-time {
+  display: flex;
+  flex-direction: row;
+  margin: 0 0 10px 0;
 }
-.label {
-  font-weight:900px;
+
+.recipe-time p {
+font-size: 24px;
 }
+
+.clock-icon {
+  width: 40px;
+  height: 40px;
+}
+
 p {
   margin: 3px;
+  font-size: 20px;
 }
+
+.health-labels {
+  display: flex;
+  justify-content: space-around;
+}
+
+.health-labels button {
+  background-color: lightseagreen;
+  border-radius: 20%;
+  font-size: 14px;
+  margin: 10px 4px 0 0;
+  width: 20%;
+}
+
+/******************** FOOTER **********************/
 .footer {
   background-color: whitesmoke;
-  padding: 10px;
-  margin: auto;
   text-align: center;
-  width: 90vw;
-  position: fixed;
-  bottom: 0;
+  width: 100vw;
 }
 
-/* MEDIA QUERIES*/
+/****************** MEDIA QUERIES******************/
 
-/* TABLET */
+/********************* TABLET *********************/
 @media (min-width: 768px) {
 
+
+/******Header********/
   .logo {
     margin: 20px;
     font-size: 40px;
+    width: 50%;
   }
 
-  .main-heading {
-    font-size: 40px;
-    margin: auto;
-    width: 80%;
+  .header {
+    justify-content: space-between;
+  }
+  
+  nav {
+    display: flex;
+    width: 50%%;
+    align-items: center;
+    }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 60%;
   }
 
   h1 {
@@ -189,52 +196,37 @@ p {
     font-size: 50px;
   }
 
-  .filter-bar {
-    display: flex; 
-    font-size: 30px;
-  }
-  .sub-heading {
-    font-size: 40px;
-  }
-
-  .label-time-filter {
-    font-size: 3d0px;
-    padding-right: 10px;
-  }
-
+/******Filtering********/
   .search-recipies {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
+    width: 100vw;
+    margin: 50px 0 50px 0;
   }
 
-  .recipe-container {
+  .search-field {
+    width: 30%;
+    font-size: 22px;
+   }
+
+  .select-field {
+    width: 80%;
+    font-size: 22px;
+  }
+
+  /******Recipe container********/
+
+   .recipe-container {
     flex-direction: row;
     flex-wrap: wrap;
-    width: 90%;
+    width: 100vw;
     margin: auto;
   }
 
   .recipe-cards {
-    width: 40%;
-  }
-
-  .header {
-    justify-content: space-between;
-  }
-  
-
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 80%;
-    }
-
-  ul {
-    flex-direction: row;
-    justify-content: space-around;
+    width: 35%;
   }
 
   .footer {
@@ -243,18 +235,24 @@ p {
 
 }
 
-/* DESKTOP */
+/********************* DESKTOP *********************/
 @media (min-width: 992px) {
 
 .logo {
   font-size: 50px;
+  width: 50%;
+}
+
+.nav {
+  width: 50%;
 }
 
 .main-heading {
-  font-size: 80px;
+  height: 30vh;
 }
 
-.sub-heading {
+h1 {
+  font-size: 100px;
 }
   
 .recipe-container {
@@ -266,5 +264,4 @@ p {
 .recipe-cards {
   width: 25%;
 }
-
 }

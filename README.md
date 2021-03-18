@@ -10,3 +10,7 @@ All data should be fetched from the [Edamam API](https://developer.edamam.com/ed
 
 ## Wolt
 https://www.notion.so/technigo/Wolt-90782b4e33884b68b04d9fdd9a4f0d9d
+
+
+
+I decided to continue working on the project by my self to improve it. 
